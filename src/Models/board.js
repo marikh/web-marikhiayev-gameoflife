@@ -41,7 +41,8 @@ class Board {
             let currentRowCells = [];
 
             for (let column = 0; column < this.widthCellsCount; column++) {
-                currentRowCells.push(Object.assign({}, this.grid[row][column]));
+                currentRowCells.push(Object.assign(new Cell(), this.grid[row][column]));
+                // same: currentRowCells.push({...this.grid[row][column]});
             };
             
             clonedGrid.push(currentRowCells);
@@ -122,7 +123,7 @@ class Board {
 
         for (let row = 0; row < this.heightCellsCount; row++)
             for (let column = 0; column < this.widthCellsCount; column++)
-            this.grid[row][column].isAlive = false;
+                this.grid[row][column].isAlive = false;
     }
 }
 

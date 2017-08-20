@@ -1,4 +1,4 @@
-class Cell {;
+class Cell {
     
     constructor (row, column)
     {
